@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_title_titles",
+  "info": {
+    "displayName": "title",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "recentSlider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "slider.slider"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "action-button.action-button"
+    }
+  }
+}

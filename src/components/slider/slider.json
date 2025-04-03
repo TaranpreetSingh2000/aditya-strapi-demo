@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_slider_sliders",
+  "info": {
+    "displayName": "Slider",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sliderHeading": {
+      "type": "string",
+      "required": true
+    },
+    "sliderDescription": {
+      "type": "text"
+    }
+  }
+}

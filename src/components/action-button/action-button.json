@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_action_button_action_buttons",
+  "info": {
+    "displayName": "Action Button"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
