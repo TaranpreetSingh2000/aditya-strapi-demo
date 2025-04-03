@@ -6,20 +6,15 @@
   },
   "options": {},
   "attributes": {
-    "mainHeading": {
-      "type": "component",
-      "repeatable": true,
-      "component": "style-heading.style-heading"
-    },
     "faqAccordion": {
       "type": "component",
       "repeatable": true,
       "component": "accordian.accordion"
     },
-    "loadMoreCta": {
+    "faqHeading": {
       "type": "component",
       "repeatable": false,
-      "component": "action-button.action-button"
+      "component": "section-heading.section-heading"
     }
   }
 }

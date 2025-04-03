@@ -30,13 +30,30 @@ export interface FaqFaq extends Struct.ComponentSchema {
   };
   attributes: {
     faqAccordion: Schema.Attribute.Component<'accordian.accordion', true>;
-    loadMoreCta: Schema.Attribute.Component<
-      'action-button.action-button',
+    faqHeading: Schema.Attribute.Component<
+      'section-heading.section-heading',
       false
     >;
+  };
+}
+
+export interface SectionHeadingSectionHeading extends Struct.ComponentSchema {
+  collectionName: 'components_section_heading_section_headings';
+  info: {
+    displayName: 'Section Heading';
+  };
+  attributes: {
     mainHeading: Schema.Attribute.Component<
       'style-heading.style-heading',
-      true
+      false
+    >;
+    mainHeading2: Schema.Attribute.Component<
+      'style-heading.style-heading',
+      false
+    >;
+    mainHeading3: Schema.Attribute.Component<
+      'style-heading.style-heading',
+      false
     >;
   };
 }
@@ -89,6 +106,7 @@ declare module '@strapi/strapi' {
       'accordian.accordion': AccordianAccordion;
       'action-button.action-button': ActionButtonActionButton;
       'faq.faq': FaqFaq;
+      'section-heading.section-heading': SectionHeadingSectionHeading;
       'slider.slider': SliderSlider;
       'style-heading.style-heading': StyleHeadingStyleHeading;
       'title.title': TitleTitle;
