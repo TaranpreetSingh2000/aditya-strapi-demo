@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_cta_button_cta_buttons",
+  "info": {
+    "displayName": "CTA Button"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

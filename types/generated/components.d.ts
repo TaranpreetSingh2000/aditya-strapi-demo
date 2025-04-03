@@ -22,6 +22,17 @@ export interface ActionButtonActionButton extends Struct.ComponentSchema {
   };
 }
 
+export interface CtaButtonCtaButton extends Struct.ComponentSchema {
+  collectionName: 'components_cta_button_cta_buttons';
+  info: {
+    displayName: 'CTA Button';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface FaqFaq extends Struct.ComponentSchema {
   collectionName: 'components_faq_faqs';
   info: {
@@ -34,6 +45,18 @@ export interface FaqFaq extends Struct.ComponentSchema {
       'section-heading.section-heading',
       false
     >;
+  };
+}
+
+export interface MenuMenu extends Struct.ComponentSchema {
+  collectionName: 'components_menu_menus';
+  info: {
+    displayName: 'Menu';
+  };
+  attributes: {
+    openInNewTab: Schema.Attribute.Boolean;
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -67,6 +90,18 @@ export interface SliderSlider extends Struct.ComponentSchema {
   attributes: {
     sliderDescription: Schema.Attribute.Text;
     sliderHeading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SocialMediaSocialMedia extends Struct.ComponentSchema {
+  collectionName: 'components_social_media_social_medias';
+  info: {
+    displayName: 'Social Media';
+  };
+  attributes: {
+    socialIcon: Schema.Attribute.Media<'images', true> &
+      Schema.Attribute.Required;
+    socialMediaUrl: Schema.Attribute.String;
   };
 }
 
@@ -105,9 +140,12 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'accordian.accordion': AccordianAccordion;
       'action-button.action-button': ActionButtonActionButton;
+      'cta-button.cta-button': CtaButtonCtaButton;
       'faq.faq': FaqFaq;
+      'menu.menu': MenuMenu;
       'section-heading.section-heading': SectionHeadingSectionHeading;
       'slider.slider': SliderSlider;
+      'social-media.social-media': SocialMediaSocialMedia;
       'style-heading.style-heading': StyleHeadingStyleHeading;
       'title.title': TitleTitle;
     }

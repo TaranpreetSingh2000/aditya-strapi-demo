@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "disclaimer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "accordian.accordion",
+      "required": true
+    }
+  }
+}

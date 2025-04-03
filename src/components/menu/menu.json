@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_menu_menus",
+  "info": {
+    "displayName": "Menu"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "regex": "^[A-Za-z\\s]+$"
+    },
+    "url": {
+      "type": "string"
+    },
+    "openInNewTab": {
+      "type": "boolean"
+    }
+  }
+}
