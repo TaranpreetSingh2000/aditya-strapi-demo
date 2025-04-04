@@ -51,12 +51,15 @@ export interface FaqFaq extends Struct.ComponentSchema {
 export interface MenuMenu extends Struct.ComponentSchema {
   collectionName: 'components_menu_menus';
   info: {
+    description: '';
     displayName: 'Menu';
   };
   attributes: {
-    openInNewTab: Schema.Attribute.Boolean;
-    title: Schema.Attribute.String;
-    url: Schema.Attribute.String;
+    openInNewTab: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

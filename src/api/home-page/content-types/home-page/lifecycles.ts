@@ -1,32 +1,56 @@
 const { ApplicationError } = require("@strapi/utils").errors;
 
 module.exports = {
-  async beforeUpdate(event) {
-    try {
-      // Get the data being updated
-      const { data } = event.params;
-      console.log(data)
-      // Check if we have homePage data with faqSection
-      if (data.homePage && data.homePage.faqSection) {
-        // For each faqSection item
-        data.homePage.faqSection.forEach((section, index) => {
-          // Check mainHeading array length
-          if (section.mainHeading && Array.isArray(section.mainHeading) && section.mainHeading.length > 2) {
-            throw new ApplicationError(
-              `The mainHeading array in faqSection item ${index + 1} cannot have more than 2 entries.`
-            );
-          }
-          
-          // Check faqAccordion array length
-          if (section.faqAccordion && Array.isArray(section.faqAccordion) && section.faqAccordion.length > 5) {
-            throw new ApplicationError(
-              `The faqAccordion array in faqSection item ${index + 1} cannot have more than 5 entries.`
-            );
-          }
-        });
-      }
-    } catch (error) {
-      throw error;
+  async beforeUpdate(event: any) {
+    const { where } = event.params;
+
+    // Ensure an ID is provided
+    if (!where?.id) {
+      throw new ApplicationError("Invalid update request: Missing entry ID.");
     }
-  }
+
+    // Fetch the full record with populated faqSection
+    const existingFaqSectionEntry = (await strapi.entityService.findOne(
+      "api::home-page.home-page",
+      where.id,
+      {
+        populate: {
+          faqSection: {
+            populate: "*",
+          },
+        },
+      }
+    )) as any;
+    const existingRecentSectionEntry = (await strapi.entityService.findOne(
+      "api::home-page.home-page",
+      where.id,
+      {
+        populate: {
+          recentSection: {
+            populate: "*",
+          },
+        },
+      }
+    )) as any;
+
+    console.log("Existing FAQ Entry:", existingFaqSectionEntry);
+    console.log("Existing Recent Entry:", existingRecentSectionEntry);
+
+
+    if (!existingFaqSectionEntry || !existingFaqSectionEntry.faqSection) {
+      throw new ApplicationError("Error: faqSection not found in the entry.");
+    }
+
+    // Define the max allowed entries for faqAccordion
+    const MAX_FAQ_ITEMS = 8;
+
+    // Validate the faqAccordion array length
+    for (const [index, section] of existingFaqSectionEntry.faqSection.entries()) {
+      if (section?.faqAccordion?.length > MAX_FAQ_ITEMS) {
+        throw new ApplicationError(
+          `Error: faqAccordion in section ${index + 1} cannot have more than ${MAX_FAQ_ITEMS} entries.`
+        );
+      }
+    }
+  },
 };
