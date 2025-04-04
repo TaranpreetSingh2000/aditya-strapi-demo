@@ -7,8 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-
-
 const QASlider = ({sliderSectionData}) => {
   const swiperRef = useRef(null);
   return (

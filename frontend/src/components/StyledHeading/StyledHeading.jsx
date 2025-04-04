@@ -1,22 +1,18 @@
 const StyledHeading = () => {
-    const heading =
-   { mainHeading: {
+  const heading = {
+    mainHeading: {
       heading: "Frequently Asked",
       color: "Black",
-      breakLine: false
+      breakLine: false,
     },
     mainHeading2: {
-      "heading": "Questions",
-      "color": "Red",
-      "breakLine": false
+      heading: "Questions",
+      color: "Red",
+      breakLine: false,
     },
-    "mainHeading3": null
-  }}
-  return (
-    <>
+    mainHeading3: null,
+  };
+  return <></>;
+};
 
-    </>
-  )
-}
-
-export default StyledHeading
+export default StyledHeading;
