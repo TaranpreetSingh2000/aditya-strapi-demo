@@ -48,6 +48,58 @@ export interface FaqFaq extends Struct.ComponentSchema {
   };
 }
 
+export interface ImpactNewsWithImageImpactNewsWithImage
+  extends Struct.ComponentSchema {
+  collectionName: 'components_impact_news_with_image_impact_news_with_images';
+  info: {
+    displayName: 'Impact news with Image';
+  };
+  attributes: {
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    timeline: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ImpactNewsWithoutImageImpactNewsWithoutImage
+  extends Struct.ComponentSchema {
+  collectionName: 'components_impact_news_without_image_impact_news_without_images';
+  info: {
+    displayName: 'Impact news without Image';
+  };
+  attributes: {
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    tag: Schema.Attribute.String;
+    timeline: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ImpactNewsImpactNews extends Struct.ComponentSchema {
+  collectionName: 'components_impact_news_impact_news';
+  info: {
+    description: '';
+    displayName: 'Impact News';
+  };
+  attributes: {
+    newsWithImage: Schema.Attribute.Component<
+      'impact-news-with-image.impact-news-with-image',
+      false
+    >;
+    newsWithoutImage: Schema.Attribute.Component<
+      'impact-news-without-image.impact-news-without-image',
+      false
+    >;
+    newsWithoutImage2: Schema.Attribute.Component<
+      'impact-news-without-image.impact-news-without-image',
+      false
+    >;
+  };
+}
+
 export interface MenuMenu extends Struct.ComponentSchema {
   collectionName: 'components_menu_menus';
   info: {
@@ -145,6 +197,9 @@ declare module '@strapi/strapi' {
       'action-button.action-button': ActionButtonActionButton;
       'cta-button.cta-button': CtaButtonCtaButton;
       'faq.faq': FaqFaq;
+      'impact-news-with-image.impact-news-with-image': ImpactNewsWithImageImpactNewsWithImage;
+      'impact-news-without-image.impact-news-without-image': ImpactNewsWithoutImageImpactNewsWithoutImage;
+      'impact-news.impact-news': ImpactNewsImpactNews;
       'menu.menu': MenuMenu;
       'section-heading.section-heading': SectionHeadingSectionHeading;
       'slider.slider': SliderSlider;

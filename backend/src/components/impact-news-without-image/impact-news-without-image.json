@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_impact_news_without_image_impact_news_without_images",
+  "info": {
+    "displayName": "Impact news without Image"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "timeline": {
+      "type": "string",
+      "required": true
+    },
+    "tag": {
+      "type": "string"
+    }
+  }
+}

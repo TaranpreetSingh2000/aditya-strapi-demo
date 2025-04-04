@@ -1,4 +1,4 @@
-const { ApplicationError } = require("@strapi/utils").errors;
+const { ApplicationError: HomePageApplicationError } = require("@strapi/utils").errors;
 
 module.exports = {
   async beforeUpdate(event: any) {
@@ -6,7 +6,7 @@ module.exports = {
 
     // Ensure an ID is provided
     if (!where?.id) {
-      throw new ApplicationError("Invalid update request: Missing entry ID.");
+      throw new HomePageApplicationError("Invalid update request: Missing entry ID.");
     }
 
     // Fetch the full record with populated faqSection
@@ -25,7 +25,7 @@ module.exports = {
     console.log("Existing FAQ Entry:", existingFaqSectionEntry);
 
     if (!existingFaqSectionEntry || !existingFaqSectionEntry.faqSection) {
-      throw new ApplicationError("Error: faqSection not found in the entry.");
+      throw new HomePageApplicationError("Error: faqSection not found in the entry.");
     }
 
     // Define the max allowed entries for faqAccordion
@@ -37,7 +37,7 @@ module.exports = {
       section,
     ] of existingFaqSectionEntry.faqSection.entries()) {
       if (section?.faqAccordion?.length > MAX_FAQ_ITEMS) {
-        throw new ApplicationError(
+        throw new HomePageApplicationError(
           `Error: faqAccordion in section ${index + 1} cannot have more than ${MAX_FAQ_ITEMS} entries.`
         );
       }

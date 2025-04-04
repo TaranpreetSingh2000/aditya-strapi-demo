@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_impact_news_impact_news",
+  "info": {
+    "displayName": "Impact News",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "newsWithImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "impact-news-with-image.impact-news-with-image"
+    },
+    "newsWithoutImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "impact-news-without-image.impact-news-without-image"
+    },
+    "newsWithoutImage2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "impact-news-without-image.impact-news-without-image"
+    }
+  }
+}
