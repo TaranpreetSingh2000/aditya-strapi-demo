@@ -27,7 +27,7 @@
     "cta": {
       "type": "component",
       "repeatable": true,
-      "component": "cta-button.cta-button"
+      "component": "action-button.action-button"
     }
   }
 }
