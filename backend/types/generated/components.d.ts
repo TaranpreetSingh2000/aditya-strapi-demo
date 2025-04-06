@@ -40,7 +40,13 @@ export interface FaqFaq extends Struct.ComponentSchema {
     displayName: 'Faq';
   };
   attributes: {
-    faqAccordion: Schema.Attribute.Component<'accordian.accordion', true>;
+    faqAccordion: Schema.Attribute.Component<'accordian.accordion', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 7;
+        },
+        number
+      >;
     faqHeading: Schema.Attribute.Component<
       'section-heading.section-heading',
       false
@@ -88,15 +94,18 @@ export interface ImpactNewsImpactNews extends Struct.ComponentSchema {
     newsWithImage: Schema.Attribute.Component<
       'impact-news-with-image.impact-news-with-image',
       false
-    >;
+    > &
+      Schema.Attribute.Required;
     newsWithoutImage: Schema.Attribute.Component<
       'impact-news-without-image.impact-news-without-image',
       false
-    >;
+    > &
+      Schema.Attribute.Required;
     newsWithoutImage2: Schema.Attribute.Component<
       'impact-news-without-image.impact-news-without-image',
       false
-    >;
+    > &
+      Schema.Attribute.Required;
   };
 }
 

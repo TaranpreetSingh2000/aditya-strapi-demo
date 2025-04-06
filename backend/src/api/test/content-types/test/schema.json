@@ -14,7 +14,10 @@
     "impactNews": {
       "type": "component",
       "repeatable": true,
-      "component": "impact-news.impact-news"
+      "component": "impact-news.impact-news",
+      "max": 2,
+      "required": true,
+      "min": 2
     }
   }
 }

@@ -9,17 +9,20 @@
     "newsWithImage": {
       "type": "component",
       "repeatable": false,
-      "component": "impact-news-with-image.impact-news-with-image"
+      "component": "impact-news-with-image.impact-news-with-image",
+      "required": true
     },
     "newsWithoutImage": {
       "type": "component",
       "repeatable": false,
-      "component": "impact-news-without-image.impact-news-without-image"
+      "component": "impact-news-without-image.impact-news-without-image",
+      "required": true
     },
     "newsWithoutImage2": {
       "type": "component",
       "repeatable": false,
-      "component": "impact-news-without-image.impact-news-without-image"
+      "component": "impact-news-without-image.impact-news-without-image",
+      "required": true
     }
   }
 }
