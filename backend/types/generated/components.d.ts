@@ -40,11 +40,72 @@ export interface FaqFaq extends Struct.ComponentSchema {
     displayName: 'Faq';
   };
   attributes: {
-    faqAccordion: Schema.Attribute.Component<'accordian.accordion', true>;
+    faqAccordion: Schema.Attribute.Component<'accordian.accordion', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 7;
+        },
+        number
+      >;
     faqHeading: Schema.Attribute.Component<
       'section-heading.section-heading',
       false
     >;
+  };
+}
+
+export interface ImpactNewsWithImageImpactNewsWithImage
+  extends Struct.ComponentSchema {
+  collectionName: 'components_impact_news_with_image_impact_news_with_images';
+  info: {
+    displayName: 'Impact news with Image';
+  };
+  attributes: {
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    timeline: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ImpactNewsWithoutImageImpactNewsWithoutImage
+  extends Struct.ComponentSchema {
+  collectionName: 'components_impact_news_without_image_impact_news_without_images';
+  info: {
+    displayName: 'Impact news without Image';
+  };
+  attributes: {
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    tag: Schema.Attribute.String;
+    timeline: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ImpactNewsImpactNews extends Struct.ComponentSchema {
+  collectionName: 'components_impact_news_impact_news';
+  info: {
+    description: '';
+    displayName: 'Impact News';
+  };
+  attributes: {
+    newsWithImage: Schema.Attribute.Component<
+      'impact-news-with-image.impact-news-with-image',
+      false
+    > &
+      Schema.Attribute.Required;
+    newsWithoutImage: Schema.Attribute.Component<
+      'impact-news-without-image.impact-news-without-image',
+      false
+    > &
+      Schema.Attribute.Required;
+    newsWithoutImage2: Schema.Attribute.Component<
+      'impact-news-without-image.impact-news-without-image',
+      false
+    > &
+      Schema.Attribute.Required;
   };
 }
 
@@ -145,6 +206,9 @@ declare module '@strapi/strapi' {
       'action-button.action-button': ActionButtonActionButton;
       'cta-button.cta-button': CtaButtonCtaButton;
       'faq.faq': FaqFaq;
+      'impact-news-with-image.impact-news-with-image': ImpactNewsWithImageImpactNewsWithImage;
+      'impact-news-without-image.impact-news-without-image': ImpactNewsWithoutImageImpactNewsWithoutImage;
+      'impact-news.impact-news': ImpactNewsImpactNews;
       'menu.menu': MenuMenu;
       'section-heading.section-heading': SectionHeadingSectionHeading;
       'slider.slider': SliderSlider;

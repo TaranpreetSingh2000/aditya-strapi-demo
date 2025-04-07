@@ -6,10 +6,7 @@ import _get from 'lodash/get';
 export default async function Home() {
   const homepageData = await fetchHomePageData();
   const faqSectionData = _get(homepageData, 'homePage.faqSection',[])
-  const sliderSectionData = _get(homepageData, 'homePage.recentSection',{})
-
-  console.log(homepageData);
-  
+  const sliderSectionData = _get(homepageData, 'homePage.recentSection',{})  
   
   return (
     <>

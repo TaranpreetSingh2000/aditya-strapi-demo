@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_impact_news_with_image_impact_news_with_images",
+  "info": {
+    "displayName": "Impact news with Image"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "timeline": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
