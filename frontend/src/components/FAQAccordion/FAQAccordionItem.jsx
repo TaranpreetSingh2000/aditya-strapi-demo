@@ -5,7 +5,7 @@ const FAQAccordionItem = ({accordionItem}) => {
     
   return (
     <div
-    className="bg-white rounded-lg overflow-hidden px-5 py-4 md:px-7 shadow-md "
+    className="bg-white rounded-lg overflow-hidden px-5 py-4 md:px-7 shadow-md"
   >
     <button
       className="w-full flex justify-between items-center py-3 md:py-4 text-base sm:text-lg font-semibold text-[#1C1C1C] bg-white transition-all text-left cursor-pointer"

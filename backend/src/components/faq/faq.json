@@ -10,7 +10,7 @@
       "type": "component",
       "repeatable": true,
       "component": "accordian.accordion",
-      "max": 7
+      "max": 8
     },
     "faqHeading": {
       "type": "component",

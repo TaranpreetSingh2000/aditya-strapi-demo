@@ -18,9 +18,9 @@ const FAQAccordion = ({ faqSectionData }) => {
         {/* Title */}
         <h2 className="text-4xl sm:text-5xl text-[#1C1C1C] font-light text-center mb-8 sm:mb-10">
           {[
-            faqSectionData[0].faqHeading?.mainHeading,
-            faqSectionData[0].faqHeading?.mainHeading2,
-            faqSectionData[0].faqHeading?.mainHeading3,
+            faqSectionData?.faqHeading?.mainHeading,
+            faqSectionData?.faqHeading?.mainHeading2,
+            faqSectionData?.faqHeading?.mainHeading3,
           ]
             .filter(Boolean)
             .map((item, index) => {
@@ -28,13 +28,13 @@ const FAQAccordion = ({ faqSectionData }) => {
               const key = `heading-${index}`;
 
               return (
-                <HeadingTag key={key} className="mb-2">
+                <HeadingTag key={key} >
                   {item.color === "Red" ? (
                     <span className="text-[#CA1F34] font-light mb-2">
                       &nbsp;{item.heading}&nbsp;
                     </span>
                   ) : (
-                    item.heading
+                    <span>{item.heading}</span>
                   )}
                 </HeadingTag>
               );
@@ -43,7 +43,7 @@ const FAQAccordion = ({ faqSectionData }) => {
 
         {/* FAQ Items */}
         <div className="space-y-4">
-          {faqSectionData[0].faqAccordion
+          {faqSectionData?.faqAccordion
             .slice(0, visibleCount)
             .map((faq, index) => (
               <FAQAccordionItem key={index} accordionItem={faq} />
@@ -51,7 +51,7 @@ const FAQAccordion = ({ faqSectionData }) => {
         </div>
 
         {/* Load More Button */}
-        {visibleCount < faqSectionData[0]?.faqAccordion.length && (
+        {visibleCount < faqSectionData?.faqAccordion.length && (
           <div className="flex justify-center mt-8 sm:mt-10">
             <button
               className="px-6 md:px-8 py-3 bg-[#ca1f34] cursor-pointer text-white font-semibold rounded-full hover:bg-[#ca1f36f8] transition-all"
