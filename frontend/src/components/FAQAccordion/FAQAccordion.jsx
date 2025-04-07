@@ -21,7 +21,7 @@ const FAQAccordion = ({ faqSectionData }) => {
 
         {/* FAQ Items */}
         <div className="space-y-4">
-          {faqSectionData[0].faqAccordion
+          {faqSectionData?.faqAccordion
             .slice(0, visibleCount)
             .map((faq, index) => (
               <FAQAccordionItem key={index} accordionItem={faq} />
@@ -29,7 +29,7 @@ const FAQAccordion = ({ faqSectionData }) => {
         </div>
 
         {/* Load More Button */}
-        {visibleCount < faqSectionData[0]?.faqAccordion.length && (
+        {visibleCount < faqSectionData?.faqAccordion.length && (
           <div className="flex justify-center mt-8 sm:mt-10">
             <button
               className="px-6 md:px-8 py-3 bg-[#ca1f34] cursor-pointer text-white font-semibold rounded-full hover:bg-[#ca1f36f8] transition-all"

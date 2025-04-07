@@ -8,6 +8,7 @@ export default async function Home() {
   const faqSectionData = _get(homepageData, 'homePage.faqSection',[])
   const sliderSectionData = _get(homepageData, 'homePage.recentSection',{})  
   
+  console.log('faqSectionData', faqSectionData);
   return (
     <>
     <QASlider sliderSectionData={sliderSectionData}/>

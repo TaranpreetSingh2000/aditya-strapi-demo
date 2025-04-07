@@ -23,4 +23,4 @@ const StyledHeading = ({data,style}) => {
   </>;
 };
 
-export default StyledHeading;
+// export default StyledHeading;

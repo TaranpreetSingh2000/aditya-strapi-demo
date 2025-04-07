@@ -1,22 +1,22 @@
 import { gql } from "@apollo/client";
 
 const GET_HEADER_DATA = gql`
-query Header {
-  header {
-    logo {
-      url
-      alternativeText
-    }
-    nav {
-      title
-      url
-      openInNewTab
-    }
-    cta {
-      title
+  query Header {
+    header {
+      logo {
+        url
+        alternativeText
+      }
+      nav {
+        title
+        url
+        openInNewTab
+      }
+      cta {
+        title
+      }
     }
   }
-}
 `;
 
 const GET_HOMEPAGE_DATA = gql`
@@ -59,22 +59,22 @@ const GET_HOMEPAGE_DATA = gql`
   }
 `;
 
-const GET_FOOTER_DATA = gql `
-query Footer {
-  footer {
-    disclaimer {
-      heading
-      description
+const GET_FOOTER_DATA = gql`
+  query Footer {
+    footer {
+      disclaimer {
+        heading
+        description
+      }
     }
-  }
-  footerNote {
-    copyRightText
-    socialMedia {
-      socialIcon {
-        url
+    footerNote {
+      copyRightText
+      socialMedia {
+        socialIcon {
+          url
+        }
       }
     }
   }
-}
-`
-export { GET_HEADER_DATA,GET_FOOTER_DATA, GET_HOMEPAGE_DATA };
+`;
+export { GET_HEADER_DATA, GET_FOOTER_DATA, GET_HOMEPAGE_DATA };
