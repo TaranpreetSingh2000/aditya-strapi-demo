@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import FAQAccordionItem from "./FAQAccordionItem";
+import StyledHeading from "../StyledHeading/StyledHeading";
 
 const FAQAccordion = ({ faqSectionData }) => {
   const [visibleCount, setVisibleCount] = useState(4); // Show 4 FAQs initially
@@ -16,30 +17,7 @@ const FAQAccordion = ({ faqSectionData }) => {
     >
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Title */}
-        <h2 className="text-4xl sm:text-5xl text-[#1C1C1C] font-light text-center mb-8 sm:mb-10">
-          {[
-            faqSectionData[0].faqHeading?.mainHeading,
-            faqSectionData[0].faqHeading?.mainHeading2,
-            faqSectionData[0].faqHeading?.mainHeading3,
-          ]
-            .filter(Boolean)
-            .map((item, index) => {
-              const HeadingTag = item.breakLine ? "div" : React.Fragment;
-              const key = `heading-${index}`;
-
-              return (
-                <HeadingTag key={key} className="mb-2">
-                  {item.color === "Red" ? (
-                    <span className="text-[#CA1F34] font-light mb-2">
-                      &nbsp;{item.heading}&nbsp;
-                    </span>
-                  ) : (
-                    item.heading
-                  )}
-                </HeadingTag>
-              );
-            })}
-        </h2>
+        <StyledHeading data={faqSectionData[0].faqHeading}/>
 
         {/* FAQ Items */}
         <div className="space-y-4">

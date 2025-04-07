@@ -33,6 +33,7 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
         <Header headerData={headerData}/>
         {children}

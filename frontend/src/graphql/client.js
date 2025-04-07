@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 
 const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_API_URL + "/graphql",
+  uri: "http://127.0.0.1:1337" + "/graphql",
   // credentials: "same-origin",
 });
 
