@@ -10,7 +10,7 @@ const FAQAccordion = ({ faqSectionData }) => {
     setVisibleCount((prev) => prev + 4); // Show 4 more FAQs
   };
   
-
+console.log(faqSectionData)
   return (
     <div
       className="py-24"

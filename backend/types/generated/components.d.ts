@@ -121,10 +121,19 @@ export interface MenuMenu extends Struct.ComponentSchema {
 export interface RoadmapSectionRoadmapSection extends Struct.ComponentSchema {
   collectionName: 'components_roadmap_section_roadmap_sections';
   info: {
+    description: '';
     displayName: 'RoadmapSection';
   };
   attributes: {
-    roadmapCard: Schema.Attribute.Component<'accordian.accordion', true>;
+    roadmapCard: Schema.Attribute.Component<'accordian.accordion', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+          min: 1;
+        },
+        number
+      >;
     roadmapHeading: Schema.Attribute.Component<
       'section-heading.section-heading',
       false
