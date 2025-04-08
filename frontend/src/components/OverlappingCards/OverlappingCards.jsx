@@ -51,7 +51,7 @@ const OverlappingCards = ({overlappingCardsData}) => {
               <div className="flex h-full w-full relative">
                 <div
                   className={`flex flex-col justify-between items-start gap-4 w-full h-full overflow-visible
-                    ${expandedCard === index ? "ml-4" : ""}
+                  
                   `}
                 >
                   <div className="text-7xl mb-3 font-light tracking-normal text-[#f4e1e2] text-center capitalize">
