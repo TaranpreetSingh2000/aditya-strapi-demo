@@ -39,8 +39,8 @@ const QASlider = ({sliderSectionData}) => {
           }}
         >
           {sliderSectionData?.recentSlider.length>0 && sliderSectionData?.recentSlider.map((qa, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-white p-6 rounded-xl shadow-md w-full h-full min-h-[250px] md:min-h-[200px]">
+            <SwiperSlide key={index} className="!h-auto my-2">
+              <div className="bg-white p-6 rounded-xl w-full h-full shadow-md ">
                 <h3 className="text-md font-semibold mb-2">{qa?.sliderHeading}</h3>
                 <p className="text-gray-600 text-sm">{qa?.sliderDescription}</p>
               </div>

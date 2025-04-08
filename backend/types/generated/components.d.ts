@@ -118,6 +118,23 @@ export interface MenuMenu extends Struct.ComponentSchema {
   };
 }
 
+export interface RoadmapSectionRoadmapSection extends Struct.ComponentSchema {
+  collectionName: 'components_roadmap_section_roadmap_sections';
+  info: {
+    displayName: 'RoadmapSection';
+  };
+  attributes: {
+    roadmapCard: Schema.Attribute.Component<'accordian.accordion', true>;
+    roadmapHeading: Schema.Attribute.Component<
+      'section-heading.section-heading',
+      false
+    >;
+    roadmapImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
 export interface SectionHeadingSectionHeading extends Struct.ComponentSchema {
   collectionName: 'components_section_heading_section_headings';
   info: {
@@ -204,6 +221,7 @@ declare module '@strapi/strapi' {
       'impact-news-without-image.impact-news-without-image': ImpactNewsWithoutImageImpactNewsWithoutImage;
       'impact-news.impact-news': ImpactNewsImpactNews;
       'menu.menu': MenuMenu;
+      'roadmap-section.roadmap-section': RoadmapSectionRoadmapSection;
       'section-heading.section-heading': SectionHeadingSectionHeading;
       'slider.slider': SliderSlider;
       'social-media.social-media': SocialMediaSocialMedia;

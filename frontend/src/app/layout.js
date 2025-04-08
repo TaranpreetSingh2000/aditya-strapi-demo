@@ -19,8 +19,10 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body>
-        <Header headerData={headerData} />
+      <body
+        suppressHydrationWarning={true}
+      >
+        <Header headerData={headerData}/>
         {children}
         <Footer footerData={footerData} />
       </body>

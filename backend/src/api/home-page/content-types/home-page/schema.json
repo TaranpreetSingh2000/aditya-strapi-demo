@@ -20,6 +20,11 @@
       "type": "component",
       "repeatable": true,
       "component": "faq.faq"
+    },
+    "roadmapSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "roadmap-section.roadmap-section"
     }
   }
 }

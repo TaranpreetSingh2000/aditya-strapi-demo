@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_roadmap_section_roadmap_sections",
+  "info": {
+    "displayName": "RoadmapSection"
+  },
+  "options": {},
+  "attributes": {
+    "roadmapHeading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-heading.section-heading"
+    },
+    "roadmapImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "roadmapCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "accordian.accordion"
+    }
+  }
+}
