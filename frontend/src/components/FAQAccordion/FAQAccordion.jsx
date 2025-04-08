@@ -9,6 +9,7 @@ const FAQAccordion = ({ faqSectionData }) => {
   const loadMore = () => {
     setVisibleCount((prev) => prev + 4); // Show 4 more FAQs
   };
+  
 
   return (
     <div
@@ -17,7 +18,7 @@ const FAQAccordion = ({ faqSectionData }) => {
     >
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Title */}
-        <StyledHeading data={faqSectionData[0].faqHeading}/>
+        <StyledHeading styledHeadingData={faqSectionData.faqHeading}/>
 
         {/* FAQ Items */}
         <div className="space-y-4">

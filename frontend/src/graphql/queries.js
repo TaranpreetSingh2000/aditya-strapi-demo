@@ -20,61 +20,88 @@ const GET_HEADER_DATA = gql`
 `;
 
 const GET_HOMEPAGE_DATA = gql`
-  query HomePage {
-    homePage {
-      recentSection {
-        title
-        recentSlider {
-          sliderHeading
-          sliderDescription
-        }
-        cta {
-          title
-        }
+query HomePage {
+  homePage {
+    recentSection {
+      title
+      recentSlider {
+        sliderHeading
+        sliderDescription
       }
-      faqSection {
-        faqHeading {
-          mainHeading {
-            heading
-            color
-            breakLine
-          }
-          mainHeading2 {
-            heading
-            color
-            breakLine
-          }
-          mainHeading3 {
-            heading
-            color
-            breakLine
-          }
-        }
-        faqAccordion {
-          heading
-          description
-        }
+      cta {
+        title
       }
     }
-  }
-`;
-
-const GET_FOOTER_DATA = gql`
-  query Footer {
-    footer {
-      disclaimer {
+    faqSection {
+      faqHeading {
+        mainHeading {
+          heading
+          color
+          breakLine
+        }
+        mainHeading2 {
+          heading
+          color
+          breakLine
+        }
+        mainHeading3 {
+          heading
+          color
+          breakLine
+        }
+      }
+      faqAccordion {
         heading
         description
       }
     }
-    footerNote {
-      copyRightText
-      socialMedia {
-        socialIcon {
-          url
+    roadmapSection {
+      roadmapHeading {
+        mainHeading {
+          heading
+          color
+          breakLine
         }
+        mainHeading2 {
+          heading
+          color
+          breakLine
+        }
+        mainHeading3 {
+          heading
+          color
+          breakLine
+        }
+      }
+      roadmapImage {
+        url
+      }
+      roadmapCard {
+        heading
+        description
       }
     }
   }
+}
+`;
+
+const GET_FOOTER_DATA = gql`
+query Footer {
+  footer {
+    disclaimer {
+      heading
+      description
+    }
+  }
+  footerNote {
+    copyRightText
+    socialMedia {
+      socialIcon {
+        url
+      }
+      socialMediaUrl
+    }
+  }
+}
 `;
 export { GET_HEADER_DATA, GET_FOOTER_DATA, GET_HOMEPAGE_DATA };

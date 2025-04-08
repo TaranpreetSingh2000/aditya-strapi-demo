@@ -482,6 +482,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     recentSection: Schema.Attribute.Component<'title.title', false>;
+    roadmapSection: Schema.Attribute.Component<
+      'roadmap-section.roadmap-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
