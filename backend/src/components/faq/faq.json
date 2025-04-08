@@ -9,8 +9,7 @@
     "faqAccordion": {
       "type": "component",
       "repeatable": true,
-      "component": "accordian.accordion",
-      "max": 8
+      "component": "accordian.accordion"
     },
     "faqHeading": {
       "type": "component",

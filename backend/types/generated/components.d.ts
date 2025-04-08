@@ -40,13 +40,7 @@ export interface FaqFaq extends Struct.ComponentSchema {
     displayName: 'Faq';
   };
   attributes: {
-    faqAccordion: Schema.Attribute.Component<'accordian.accordion', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 8;
-        },
-        number
-      >;
+    faqAccordion: Schema.Attribute.Component<'accordian.accordion', true>;
     faqHeading: Schema.Attribute.Component<
       'section-heading.section-heading',
       false
